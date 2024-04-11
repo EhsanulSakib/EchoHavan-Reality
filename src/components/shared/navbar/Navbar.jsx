@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
     const links = <>
-        <ul className={`md:flex duration-300 top-12 absolute md:static ${open ? 'left-0' : '-left-60'} bg-blue-300 md:bg-inherit p-10 md:p-0 shadow-lg md:shadow-none no-underline gap-6 text-base text-white`}>
+        <ul className={`md:flex duration-300 top-12 absolute md:static ${open ? 'left-0' : '-left-60'} bg-blue-300 md:bg-inherit p-10 md:p-0 shadow-lg md:shadow-none no-underline gap-6 text-base text-white z-10`}>
             <li className="pb-2 md:pb-0"><NavLink to='/'>Home</NavLink></li>
             <li className="pb-2 md:pb-0"><NavLink to='/about'>About</NavLink></li>
             <li><NavLink to='/career'>Career</NavLink></li>
