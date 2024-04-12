@@ -2,27 +2,37 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { user, setUser, createUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm()
+
 
 
     const onSubmit = (data) => {
         const { name, photo, email, password } = data;
 
-        console.log(name)
-        console.log(photo)
-        console.log(email)
-        console.log(password)
+        // console.log(name)
+        // console.log(photo)
+        // console.log(email)
+        // console.log(password)
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
+                // console.log(name)
+                // console.log(photo)
+                updateProfile(result.user, {
+                    displayName: name, photoURL: photo
+                })
+                    .then(result => {
+                        console.log(result.user)
+                        setUser(result.user)
+                    })
+                    .catch(error => console.log(error.message))
             })
-            .catch(error => {
-                console.log(error)
-            })
+            .catch()
     }
 
 

@@ -2,12 +2,13 @@ import { Link, NavLink } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
-import { useState } from "react";
-import logo from '../../../../public/favicon.png'
+import { useContext, useState } from "react";
+import logo from '../../../../public/logo.png'
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
-
+    const { user } = useContext(AuthContext)
 
     const links = <>
         <ul className={`md:flex duration-300 top-12 absolute md:static ${open ? 'left-0' : '-left-60'} bg-blue-300 md:bg-inherit p-10 md:p-0 shadow-lg md:shadow-none no-underline gap-6 text-base text-white z-10`}>
@@ -45,7 +46,13 @@ const Navbar = () => {
 
             <div className="flex gap-1 items-center">
                 <div>
-                    <FaUserCircle className="text-4xl" />
+                    {
+                        user ?
+                            <img src={user.photoURL} alt="" className="w-[40px] h-[40px] rounded-full" />
+                            :
+                            <FaUserCircle className="text-4xl text-white" />
+
+                    }
                 </div>
 
                 <div>
