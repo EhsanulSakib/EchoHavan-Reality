@@ -8,6 +8,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [properties, setProperties] = useState([])
 
     const createUser = (email, password) => {
         setLoading(true)
@@ -35,8 +36,13 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
+    useEffect(() => {
+        fetch('/data.json')
+            .then(res => res.json())
+            .then(data => setProperties(data))
+    }, [])
 
-    const authInfo = { user, setUser, createUser, logOut, signIn, loading }
+    const authInfo = { user, setUser, createUser, logOut, signIn, loading, properties }
 
     return (
         <AuthContext.Provider value={authInfo}>

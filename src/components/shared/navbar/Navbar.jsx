@@ -72,9 +72,9 @@ const Navbar = () => {
                 <div>
                     {
                         user ?
-                            <button className=" bg-slate-200 py-2 px-3 text-black rounded-md text-base" onClick={handleSignOut}>Sign Out</button>
+                            <button className=" bg-slate-200 py-2 px-3 text-black rounded-md text-sm lg:text-base" onClick={handleSignOut}>Sign Out</button>
                             :
-                            <Link to='/login' className=" bg-slate-200 py-2 px-3 text-black rounded-md text-base">Login</Link>
+                            <Link to='/login' className=" bg-slate-200 py-2 px-3 text-black rounded-md text-sm lg:text-base">Login</Link>
 
                     }
 
