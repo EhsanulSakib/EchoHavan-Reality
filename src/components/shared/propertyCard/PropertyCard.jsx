@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 const PropertyCard = ({ property }) => {
-    const { id, estate_title, category, status, segment_name, image, price, location } = property
+
+    const { user } = useContext(AuthContext)
+    const { id, estate_title, category, status, segment_name, rating, reviews, image, price, location } = property
 
     return (
-        <div data-aos="flip-left" data-aos-offset="200" data-aos-delay="300" data-aos-easing="ease-in-sine" data-aos-duration="600" className="flex flex-col md:flex-row lg:flex-col gap-2 md:gap-4 lg:gap-2 w-full lg:w-11/12 m-auto h-[560px] md:h-[280px] lg:h-[560px] rounded-lg shadow-lg">
-            <div className="">
+        <div className="flex flex-col md:flex-row lg:flex-col gap-2 md:gap-4 lg:gap-2 w-full lg:w-11/12 m-auto h-[580px] md:h-[330px] lg:h-[580px] rounded-lg shadow-lg">
+            <div>
                 <img src={image.main} alt="" className=" h-64 md:h-full lg:h-64 w-full md:w-72 lg:w-full object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-t-none lg:rounded-t-lg" />
             </div>
 
@@ -23,6 +27,29 @@ const PropertyCard = ({ property }) => {
 
                 <div className="pb-4">
                     <h2 className="mb-4 text-3xl font-bold text-blue-600">{price}</h2>
+                    <div className="my-1 md:my-2 lg:my-4 flex gap-3 items-center">
+                        <h2 className="flex gap-1 items-center text-base font-bold">Rating:
+                            {
+                                rating == 5 ?
+                                    <span className="flex text-lg text-yellow-400">
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStarHalfAlt />
+                                    </span>
+                                    :
+                                    <span className="flex text-lg text-yellow-400">
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                        <FaStar />
+                                    </span>
+                            }
+                        </h2>
+                        <h2 className="text-base font-bold">Reviews: {reviews}</h2>
+                    </div>
                     <button className="btn bg-blue-500 hover:bg-blue-400 text-base md:text-lg text-white font-bold"><Link to={`/property/${id}`}>View Property</Link></button>
                 </div>
 

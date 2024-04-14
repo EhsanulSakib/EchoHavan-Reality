@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-    const { user, setUser, createUser } = useContext(AuthContext);
+    const { setUser, createUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm()
 
 

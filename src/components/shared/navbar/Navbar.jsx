@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { RiMenu2Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
@@ -12,15 +12,19 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
     const { user, logOut } = useContext(AuthContext)
     const notify = () => toast.error("User Signed Out!");
+    const navigate = useNavigate()
 
     const handleSignOut = () => {
         logOut()
+            .then(result => {
+                navigate('/')
+            })
             .then(notify)
             .catch()
     }
 
     const links = <>
-        <ul className={`md:flex duration-300 top-12 absolute md:static ${open ? 'left-0' : '-left-60'} bg-blue-300 md:bg-inherit p-10 md:p-0 shadow-lg md:shadow-none no-underline gap-6 text-base text-white z-10`}>
+        <ul className={`md:flex duration-300 top-12 absolute md:static ${open ? 'left-0' : '-left-60'} bg-blue-500 md:bg-inherit p-10 md:p-0 shadow-lg md:shadow-none no-underline gap-6 text-base text-white z-10`}>
             <li className="pb-2 md:pb-0"><NavLink to='/'>Home</NavLink></li>
             <li className="pb-2 md:pb-0"><NavLink to='/about'>About</NavLink></li>
             {
@@ -34,7 +38,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="flex items-center px-2 md:px-4 py-1 md:py-4 justify-between text-xl bg-blue-400 font-medium ">
+        <nav className="flex items-center px-2 md:px-4 py-1 md:py-4 justify-between text-xl bg-blue-600 font-medium ">
             <div className="flex items-center md:hidden">
                 <div className="md:hidden" onClick={() => setOpen(!open)}>
                     {
