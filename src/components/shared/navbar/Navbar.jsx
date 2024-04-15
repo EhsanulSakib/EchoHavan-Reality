@@ -3,7 +3,7 @@ import { RiMenu2Line } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { useContext, useState } from "react";
-import logo from '../../../../public/logo.png'
+import logo from '/logo.png'
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -66,7 +66,8 @@ const Navbar = () => {
                 <div>
                     {
                         user ?
-                            <img src={user.photoURL} alt="" className="w-[40px] h-[40px] rounded-full" />
+                            <div className="tooltip tooltip-bottom tooltip-info" data-tip={user.displayName}><img src={user.photoURL} alt="" className="w-[40px] h-[40px] rounded-full" /></div>
+
                             :
                             <FaUserCircle className="text-4xl text-white" />
 

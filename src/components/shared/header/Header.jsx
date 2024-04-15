@@ -1,4 +1,4 @@
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,12 +12,11 @@ const Header = () => {
     return (
         <div>
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                modules={[Navigation, Pagination, A11y, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                scrollbar={{ draggable: true }}
                 autoplay={{ delay: 3000 }}
             >
                 <SwiperSlide>
@@ -40,7 +39,7 @@ const Header = () => {
 
                 <SwiperSlide>
                     <div className='bg-black opacity-60 z-1'>
-                        <img src="https://img.freepik.com/free-photo/chinese-city_1127-4129.jpg?t=st=1712945680~exp=1712949280~hmac=ea334eaf98a51084e7c0aa1fdc012682eca8d9b84798073c924118537d8f336b&w=996" alt="" className='w-full h-60 md:h-96 lg:h-[500px] object-cover object-center' />
+                        <img src="https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?cs=srgb&dl=pexels-david-mcbee-1546168.jpg&fm=jpg" alt="" className='w-full h-60 md:h-96 lg:h-[500px] object-cover object-center' />
                     </div>
                     <div className='absolute w-full text-center top-16 md:top-32 lg:top-[180px] font-extrabold text-xl md:text-2xl lg:text-4xl z-10 px-10 lg:px-24'>
                         <h3 className=' drop-shadow-lg'>Transforming houses into homes filled with love, laughter, and cherished memories. Let us help you find your forever home..</h3>
@@ -49,7 +48,7 @@ const Header = () => {
 
                 <SwiperSlide>
                     <div className='opacity-50 z-1'>
-                        <img src="https://img.freepik.com/free-photo/close-up-woman-s-hand-giving-house-key-man-wooden-table_23-2148204009.jpg?t=st=1712945749~exp=1712949349~hmac=8ada704623e03864fe213edbac0b9f665a701ff04a7878d945da2f865ab8cb8b&w=996" alt="" className='w-full h-60 md:h-96 lg:h-[500px] object-cover object-center' />
+                        <img src="https://www.goldmansachs.com/intelligence/pages/articles/real-estate-may-still-offer-a-hedge-for-investors/800x450.jpg" alt="" className='w-full h-60 md:h-96 lg:h-[500px] object-cover object-center' />
                     </div>
                     <div className='absolute w-full text-center top-16 md:top-32 lg:top-[180px] font-extrabold text-xl md:text-2xl lg:text-4xl z-10 px-10 lg:px-24'>
                         <h3 className=' drop-shadow-lg'>Discover the perfect space to call your own. From cozy cottages to luxurious estates, we have something for everyone.</h3>
@@ -58,7 +57,7 @@ const Header = () => {
 
                 <SwiperSlide>
                     <div className='opacity-50 z-1'>
-                        <img src="https://img.freepik.com/free-photo/three-dimensional-house-model_23-2151003986.jpg?t=st=1712946017~exp=1712949617~hmac=a72abb12e4778d9958e88d3de19a4112000ed9cfeb7b6984a3f47f8dda639aad&w=996" alt="" className='w-full h-60 md:h-96 lg:h-[500px] object-cover object-center' />
+                        <img src="https://www.cio.com/wp-content/uploads/2023/07/shutterstock_676661263.jpg?quality=50&strip=all&w=1024" alt="" className='w-full h-60 md:h-96 lg:h-[500px] object-cover object-center' />
                     </div>
 
                     <div className='absolute w-full text-center top-16 md:top-32 lg:top-[180px] font-extrabold text-xl md:text-2xl lg:text-4xl z-10 px-10 lg:px-24'>

@@ -1,28 +1,32 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const { setUser, createUser } = useContext(AuthContext);
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit } = useForm();
+    const [show, setShow] = useState(false);
+    const [error, setError] = useState(null);
+    const notifyError = () => toast.warning({ error });
 
 
 
     const onSubmit = (data) => {
         const { name, photo, email, password } = data;
 
-        // console.log(name)
-        // console.log(photo)
-        // console.log(email)
-        // console.log(password)
+        if (password.length < 6) {
+            setError("Password should be at least 6 characters or longer.")
+            notifyError()
+            return
+        }
 
         createUser(email, password)
             .then(result => {
-                // console.log(result.user)
-                // console.log(name)
-                // console.log(photo)
                 updateProfile(result.user, {
                     displayName: name, photoURL: photo
                 })
@@ -43,30 +47,37 @@ const Register = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="w-11/12 md:w-3/4">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Your Name</span>
+                            <span className="label-text text-xl">Your Name</span>
                         </label>
                         <input type="text" name="name" placeholder="Enter your name" className="input input-bordered" {...register("name")} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Photo URL</span>
+                            <span className="label-text text-xl">Photo URL</span>
                         </label>
                         <input type="text" name="photo" placeholder="Enter photo link" className="input input-bordered" {...register("photo")} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text text-xl">Email</span>
                         </label>
                         <input type="email" name="email" placeholder="Enter your Email" className="input input-bordered" {...register("email")} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text text-xl">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="Enter your password" className="input input-bordered" {...register("password")} />
+                        <div className="w-full relative">
+                            <input type={show ? "text" : "password"} name="password" placeholder="Password" className="w-full input input-bordered" {...register("password")} />
+                            <span className="absolute right-3 top-3 text-2xl cursor-pointer" onClick={() => setShow(!show)}>
+                                {
+                                    show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                }
+                            </span>
+                        </div>
                         <label className="label">
                             <div className="flex gap-2">
-                                <input type="checkbox" required name="terms" id="terms" />
+                                <input type="checkbox" required name="terms" id="terms" className="text-lg" />
                                 <p>Accept <Link className="font-bold no-underline text-black">Term & Conditions</Link></p>
                             </div>
                         </label>

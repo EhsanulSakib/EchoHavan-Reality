@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
     const notify = () => toast.success("Successfully Logged In");
     const location = useLocation()
     const navigate = useNavigate()
+    const [show, setShow] = useState(false)
 
     const onSubmit = (data) => {
         const { email, password } = data;
@@ -19,9 +21,9 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 navigate(location?.state ? location.state : '/')
+                notify()
             }
             )
-            .then(notify)
             .catch(error => {
                 console.log(error)
             })
@@ -34,17 +36,24 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)} className="w-11/12 md:w-3/4">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email</span>
+                            <span className="label-text text-lg">Email</span>
                         </label>
                         <input type="email" name="email" placeholder="Your Email" className="input input-bordered" {...register("email")} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text text-lg">Password</span>
                         </label>
-                        <input type="password" name="password" placeholder="Password" className="input input-bordered" {...register("password")} />
+                        <div className="w-full relative">
+                            <input type={show ? "text" : "password"} name="password" placeholder="Password" className="w-full input input-bordered" {...register("password")} />
+                            <span className="absolute right-3 top-3 text-2xl cursor-pointer" onClick={() => setShow(!show)}>
+                                {
+                                    show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                }
+                            </span>
+                        </div>
                         <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            <a href="#" className="label-text-alt link link-hover text-lg">Forgot password?</a>
                         </label>
                     </div>
                     <div className="form-control mt-6">
