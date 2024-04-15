@@ -11,8 +11,8 @@ const Register = () => {
     const { setUser, createUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
     const [show, setShow] = useState(false);
-    const [error, setError] = useState(null);
-    const notifyError = () => toast.warning({ error });
+    const notifyError = errorName => toast.error(errorName);
+    const notifySuccess = () => toast.success('User Registered Successfully');
 
 
 
@@ -20,13 +20,24 @@ const Register = () => {
         const { name, photo, email, password } = data;
 
         if (password.length < 6) {
-            setError("Password should be at least 6 characters or longer.")
-            notifyError()
+            notifyError("Password should be at least 6 characters or longer.")
             return
         }
 
+        else if (!/[A-Z]/.test(password)) {
+            notifyError("Password should Contain At least a Uppercase Letter")
+            return
+        }
+
+        else if (!/[a-z]/.test(password)) {
+            notifyError("Password should Contain At least a Lowercase Letter")
+            return
+        }
+
+
         createUser(email, password)
             .then(result => {
+                notifySuccess()
                 updateProfile(result.user, {
                     displayName: name, photoURL: photo
                 })
@@ -34,9 +45,9 @@ const Register = () => {
                         console.log(result.user)
                         setUser(result.user)
                     })
-                    .catch(error => console.log(error.message))
+                    .catch()
             })
-            .catch()
+            .catch(error => notifyError(error.message.split('(').pop().split(')')[0].split('/')[1]))
     }
 
 
