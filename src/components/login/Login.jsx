@@ -5,10 +5,11 @@ import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
+import google from '/google.png';
+import github from '/github.png';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext)
+    const { signIn, handleGoogleSignIn, handleGitHubSignIn } = useContext(AuthContext)
     const { register, handleSubmit } = useForm()
     const notify = () => toast.success("Successfully Logged In");
     const location = useLocation()
@@ -27,6 +28,18 @@ const Login = () => {
             .catch(error => {
                 console.log(error)
             })
+    }
+
+    const handleGoogleLogin = () => {
+        handleGoogleSignIn()
+        navigate(location?.state ? location.state : '/')
+        notify()
+    }
+
+    const handleGithubLogin = () => {
+        handleGitHubSignIn()
+        navigate(location?.state ? location.state : '/')
+        notify()
     }
 
     return (
@@ -60,6 +73,11 @@ const Login = () => {
                         <button className="btn bg-blue-400 hover:bg-blue-500 text-white text-lg font-bold">Login</button>
                     </div>
                 </form>
+                <div className="flex gap-4 my-2">
+                    <img src={google} alt="google logo" onClick={handleGoogleLogin} className="w-10 cursor-pointer" />
+                    <img src={github} alt="google logo" onClick={handleGithubLogin} className="w-10 cursor-pointer" />
+                </div>
+                <hr className="w-11/12 border border-stone-400 border-dashed" />
                 <div>
                     <p>Does not have any account? <Link to='/register' className="no-underline text-blue-400 hover:text-blue-500 font-bold">Register Now</Link></p>
                 </div>

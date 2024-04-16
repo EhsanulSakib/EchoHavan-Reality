@@ -52,7 +52,7 @@ const Register = () => {
 
 
     return (
-        <div className=" bg-slate-100 h-screen flex items-center justify-center">
+        <div className=" bg-slate-100 mt-4 md:mt-8 lg:mt-12 flex items-center justify-center">
             <div className="flex gap-4 rounded-xl flex-col items-center justify-center w-11/12 md:w-1/2 m-auto py-4 md:py-8 lg:py-12 bg-white shadow-md">
                 <h2 className="text-2xl">Please Register</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="w-11/12 md:w-3/4">

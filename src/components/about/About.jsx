@@ -18,17 +18,17 @@ const About = () => {
                 <h3 className="text-2xl font-bold my-4 text-center">Meet Our Team</h3>
                 <div className="flex flex-col md:flex-row gap-4 ">
                     <div>
-                        <img src="https://img.freepik.com/free-photo/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background_662251-838.jpg" alt="" className="w-full" />
+                        <img src="https://img.freepik.com/free-photo/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background_662251-838.jpg" alt="" className="w-full h-56 object-cover object-center" />
                         <h2 className="text-xl font-bold mt-1  text-center">Mark Henry</h2>
                         <h2 className="text-base mt-1  text-center">Founder</h2>
                     </div>
                     <div>
-                        <img src="https://img.freepik.com/free-photo/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background_662251-838.jpg" alt="" className="w-full" />
+                        <img src="https://st4.depositphotos.com/12982378/27713/i/450/depositphotos_277138100-stock-photo-cheerful-bearded-man-suit-holding.jpg" alt="" className="w-full h-56 object-cover object-center" />
                         <h2 className="text-xl font-bold mt-1  text-center">Romero</h2>
                         <h2 className="text-base mt-1  text-center">Co-Founder</h2>
                     </div>
                     <div>
-                        <img src="https://img.freepik.com/free-photo/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background_662251-838.jpg" alt="" className="w-full" />
+                        <img src="https://img.freepik.com/free-photo/businessman-staring-through-window-close-up_1098-238.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712966400&semt=ais" alt="" className="w-full h-56 object-cover object-center" />
                         <h2 className="text-xl font-bold mt-1  text-center">Jack Paul</h2>
                         <h2 className="text-base mt-1  text-center">CEO</h2>
                     </div>

@@ -66,7 +66,7 @@ const Navbar = () => {
                 <div>
                     {
                         user ?
-                            <div className="tooltip tooltip-bottom tooltip-info" data-tip={user.displayName}><img src={user.photoURL} alt="" className="w-[40px] h-[40px] rounded-full" /></div>
+                            <div className="tooltip tooltip-bottom tooltip-info" data-tip={user.displayName}><img src={user.photoURL} alt="" className="w-[40px] h-[40px] object-cover object-top rounded-full" /></div>
 
                             :
                             <FaUserCircle className="text-4xl text-white" />
