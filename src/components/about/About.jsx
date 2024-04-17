@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
     return (
         <div className="py-8">
+            <Helmet>
+                <title>EchoHaven Realty | About</title>
+            </Helmet>
             <div className="max-w-4xl mx-auto px-4">
                 <h2 className="text-3xl font-bold text-center mb-4">About Us</h2>
                 <p className="text-lg text-gray-800 leading-relaxed mb-6">Welcome to EchoHaven Reality, your premier destination for all your real estate needs. At EchoHaven, we are committed to providing exceptional service and expertise to our clients, whether you're buying, selling, or renting property.</p>

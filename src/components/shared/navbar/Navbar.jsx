@@ -29,10 +29,17 @@ const Navbar = () => {
             <li className="pb-2 md:pb-0"><NavLink to='/about'>About</NavLink></li>
             {
                 user ?
+                    <li><NavLink to='/blogs'>Blogs</NavLink></li>
+                    :
+                    ""
+            }
+            {
+                user ?
                     <li><NavLink to='/profile'>Profile</NavLink></li>
                     :
                     ""
             }
+
         </ul>
     </>
 

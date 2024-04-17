@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
     const { user, setUser } = useContext(AuthContext)
@@ -31,6 +32,9 @@ const Profile = () => {
 
     return (
         <div className="py-4 md:py-8">
+            <Helmet>
+                <title>EchoHaven Realty | Profile</title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center mb-4">Profile</h2>
             <div className="hero items-center md:justify-between w-11/12 m-auto bg-slate-100 rounded-lg shadow-xl">
                 <div className="hero-content flex-col md:flex-row">

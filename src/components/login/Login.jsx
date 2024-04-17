@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import google from '/google.png';
 import github from '/github.png';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { signIn, handleGoogleSignIn, handleGitHubSignIn } = useContext(AuthContext)
@@ -46,6 +47,9 @@ const Login = () => {
 
     return (
         <div className=" bg-slate-100 h-screen flex items-center justify-center">
+            <Helmet>
+                <title>EchoHaven Realty | Login</title>
+            </Helmet>
             <div className="flex gap-4 rounded-xl flex-col items-center justify-center w-11/12 md:w-1/2 m-auto py-4 md:py-8 lg:py-12 bg-white shadow-md">
                 <h2 className="text-2xl font-semibold">Please Login</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="w-11/12 md:w-3/4">

@@ -14,6 +14,7 @@ import 'swiper/css/scrollbar';
 import { useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import { Helmet } from "react-helmet-async";
 
 const PropertyDetails = () => {
     const properties = useLoaderData()
@@ -28,6 +29,9 @@ const PropertyDetails = () => {
     const position = [coordinates.latitude, coordinates.longitude]
     return (
         <div className=" mt-2 ">
+            <Helmet>
+                <title>EchoHaven Realty | Property-{id}</title>
+            </Helmet>
             <div className="px-3 m-auto">
                 <div className="flex flex-col gap-1 md:flex-row md:h-96 lg:h-[500px]">
                     <div className="md:w-1/2">
