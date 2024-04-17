@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "userName": "Jenny",
+      "userNationality": "USA",
+      "userImage": "https://img.freepik.com/free-photo/beautiful-woman-cafe_273609-12693.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1703116800&semt=ais",
+      "blogTitle": "My Journey with EchoHaven Realty: Finding My Dream Home",
+      "description": "Join me as I recount my amazing experience with EchoHaven Realty. From the first consultation to the keys in my hand, EchoHaven's team guided me every step of the way. They listened to my needs, provided expert advice, and helped me find the perfect home. If you're in search of your dream home, look no further than EchoHaven Realty!",
+      "likes": 56,
+      "numOfComments": 2
+    },
+    {
+      "id": 2,
+      "userName": "David",
+      "userNationality": "Canada",
+      "userImage": "https://www.allprodad.com/wp-content/uploads/2021/03/05-12-21-happy-people.jpg",
+      "blogTitle": "EchoHaven Realty: Making Selling My Home a Breeze",
+      "description": "I recently sold my home with EchoHaven Realty, and I couldn't be happier with the experience. Their team went above and beyond to market my property, attract potential buyers, and negotiate the best deal. Thanks to EchoHaven Realty, I was able to sell my home quickly and with minimal stress. Highly recommended!",
+      "likes": 34,
+      "numOfComments": 2
+    },
+    {
+      "id": 3,
+      "userName": "Sophie",
+      "userNationality": "UK",
+      "userImage": "https://t4.ftcdn.net/jpg/05/11/52/53/360_F_511525394_VmniAYGdp33I0kJRWtgFhuGAfnJ1178G.jpg",
+      "blogTitle": "EchoHaven Realty: A Partner You Can Trust in Real Estate",
+      "description": "My experience with EchoHaven Realty has been nothing short of exceptional. From the initial consultation to the closing of my property purchase, EchoHaven's team was professional, knowledgeable, and always available to answer my questions. If you're looking for a real estate partner you can trust, look no further than EchoHaven Realty!",
+      "likes": 45,
+      "numOfComments": 2
+    },
+    {
+        "id": 4,
+        "userName": "Michael",
+        "userNationality": "USA",
+        "userImage": "https://media.istockphoto.com/id/1296158947/photo/portrait-of-creative-trendy-black-african-male-designer-laughing.jpg?s=612x612&w=0&k=20&c=1Ws_LSzWjYvegGxHYQkkgVytdpDcnmK0upJyGOzEPcg=",
+        "blogTitle": "EchoHaven Realty: The Key to Stress-Free Homebuying",
+        "description": "As a first-time homebuyer, I was overwhelmed by the process until I found EchoHaven Realty. Their team guided me through every step, from mortgage pre-approval to closing. Thanks to their expertise and support, I found my dream home without the stress. EchoHaven Realty truly made my homebuying experience enjoyable and stress-free!",
+        "likes": 62,
+        "numOfComments": 3
+      },
+      {
+        "id": 5,
+        "userName": "Emma",
+        "userNationality": "Canada",
+        "userImage": "https://t4.ftcdn.net/jpg/02/55/84/77/360_F_255847785_aU2DqzONRlaIhvS0wJ37rCpyXei8GQ0g.jpg",
+        "blogTitle": "Why I Chose EchoHaven Realty for My Investment Property",
+        "description": "Investing in real estate can be daunting, but EchoHaven Realty made it easy. Their team helped me identify lucrative investment opportunities, negotiate favorable terms, and manage my rental property. With EchoHaven Realty's guidance, I've built a profitable real estate portfolio and achieved financial success. Thank you, EchoHaven!",
+        "likes": 48,
+        "numOfComments": 4
+      },
+      {
+        "id": 6,
+        "userName": "Oliver",
+        "userNationality": "UK",
+        "userImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGTSxtX7BzPK3oi4jTjRGZJO7e3kHvVpj9avoVaHhEkkywl5jqmGc-YZpipUPadqfXuoU&usqp=CAU",
+        "blogTitle": "EchoHaven Realty: Your Partner in Property Management",
+        "description": "Managing rental properties can be time-consuming, but EchoHaven Realty made it hassle-free. Their property management services are top-notch, handling everything from tenant screening to maintenance and rent collection. With EchoHaven Realty managing my properties, I can relax knowing my investments are in good hands. Highly recommend their services!",
+        "likes": 55,
+        "numOfComments": 2
+      },
+      {
+        "id": 7,
+        "userName": "Isabella",
+        "userNationality": "USA",
+        "userImage": "https://img.freepik.com/free-photo/hopeful-pretty-blonde-student-keeps-fingers-crossed-believes-good-fortune_273609-18873.jpg?size=626&ext=jpg&ga=GA1.1.87170709.1707609600&semt=ais",
+        "blogTitle": "EchoHaven Realty: A Personalized Approach to Real Estate",
+        "description": "My experience with EchoHaven Realty exceeded all expectations. Unlike other agencies, EchoHaven took the time to understand my unique needs and preferences. Their personalized approach made all the difference, resulting in a seamless homebuying process and finding the perfect home for my family. EchoHaven Realty truly cares about their clients!",
+        "likes": 41,
+        "numOfComments": 3
+      },
+      {
+        "id": 8,
+        "userName": "Jacob",
+        "userNationality": "Canada",
+        "userImage": "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg",
+        "blogTitle": "EchoHaven Realty: Exceptional Service from Start to Finish",
+        "description": "I recently sold my home with EchoHaven Realty, and I couldn't be happier with the experience. Their team provided outstanding service, guiding me through every step of the selling process and ensuring a smooth transaction. Thanks to EchoHaven Realty, I sold my home quickly and for a great price. Highly recommend!",
+        "likes": 37,
+        "numOfComments": 2
+      },
+      {
+        "id": 9,
+        "userName": "Ava",
+        "userNationality": "UK",
+        "userImage": "https://img.freepik.com/free-photo/happiness-wellbeing-confidence-concept-cheerful-attractive-african-american-woman-curly-haircut-cross-arms-chest-self-assured-powerful-pose-smiling-determined-wear-yellow-sweater_176420-35063.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1713139200&semt=sph",
+        "blogTitle": "My Real Estate Journey with EchoHaven Realty",
+        "description": "EchoHaven Realty made my real estate dreams a reality. Their knowledgeable team helped me navigate the competitive market and find the perfect home for my family. With their expert guidance and support, I felt confident throughout the entire process. Thank you, EchoHaven Realty, for making my real estate journey unforgettable!",
+        "likes": 52,
+        "numOfComments": 3
+      }
+  ]
+  

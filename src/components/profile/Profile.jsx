@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Profile = () => {
     const { user, setUser } = useContext(AuthContext)
-
     const { register, handleSubmit } = useForm()
+
     const onSubmit = (data) => {
         const { name, photo } = data;
         console.log(name)
@@ -21,8 +21,13 @@ const Profile = () => {
                 setUser(result.user)
             })
             .catch()
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload()
+        }, 500);
     }
+
+
+
 
     return (
         <div className="py-4 md:py-8">

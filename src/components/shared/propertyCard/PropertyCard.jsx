@@ -2,13 +2,19 @@ import { Link } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const PropertyCard = ({ property }) => {
 
     const { user } = useContext(AuthContext)
     const { id, estate_title, category, status, segment_name, rating, reviews, image, price, location } = property
 
+
     return (
-        <div className="flex flex-col md:flex-row lg:flex-col gap-2 md:gap-4 lg:gap-2 w-full lg:w-11/12 m-auto h-[580px] md:h-[330px] lg:h-[580px] rounded-lg shadow-lg">
+        <div data-aos="fade-up"
+            data-aos-duration="1000" className="flex flex-col md:flex-row lg:flex-col gap-2 md:gap-4 lg:gap-2 w-full lg:w-11/12 m-auto h-[580px] md:h-[330px] lg:h-[580px] rounded-lg shadow-lg">
             <div>
                 <img src={image.main} alt="" className=" h-64 md:h-full lg:h-64 w-full md:w-72 lg:w-full object-cover object-center rounded-t-lg md:rounded-l-lg md:rounded-t-none lg:rounded-t-lg" />
             </div>

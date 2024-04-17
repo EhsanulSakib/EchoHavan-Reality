@@ -1,3 +1,4 @@
+import FAQ from "../shared/FAQ/FAQ";
 import Header from "../shared/header/Header";
 import Properties from "../shared/properties/Properties";
 
@@ -9,6 +10,8 @@ const Home = () => {
             <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 lg:mb-4">View All Estates</h2>
 
             <Properties></Properties>
+            <h2 className="mt-8 md:mt-12 lg:mt-16 text-center text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 lg:mb-4">FAQ</h2>
+            <FAQ></FAQ>
         </div>
     );
 };

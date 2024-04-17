@@ -12,6 +12,7 @@ const Login = () => {
     const { signIn, handleGoogleSignIn, handleGitHubSignIn } = useContext(AuthContext)
     const { register, handleSubmit } = useForm()
     const notify = () => toast.success("Successfully Logged In");
+    const notifyError = errorName => toast.error(errorName);
     const location = useLocation()
     const navigate = useNavigate()
     const [show, setShow] = useState(false)
@@ -26,8 +27,9 @@ const Login = () => {
             }
             )
             .catch(error => {
-                console.log(error)
+                notifyError(error.message.split('(').pop().split(')')[0].split('/')[1])
             })
+
     }
 
     const handleGoogleLogin = () => {
