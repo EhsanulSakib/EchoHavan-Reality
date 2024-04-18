@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import PropertyDetails from "../propertyDetails/PropertyDetails";
 import About from "../about/About";
 import Blogs from "../blogs/Blogs";
+import Bookmarks from "../bookmarks/Bookmarks";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path: '/blogs',
                 element: <PrivateRoute><Blogs></Blogs></PrivateRoute>,
                 loader: () => fetch('/blog.json')
+            },
+            {
+                path: '/bookmarks',
+                element: <PrivateRoute><Bookmarks></Bookmarks></PrivateRoute>,
             },
             {
                 path: '/login',

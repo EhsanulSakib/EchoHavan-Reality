@@ -1,7 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
 
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IoIosAddCircleOutline } from "react-icons/io";
@@ -11,17 +12,44 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import 'swiper/css/scrollbar';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../provider/AuthProvider";
 
 const PropertyDetails = () => {
+    const { user } = useContext(AuthContext)
     const properties = useLoaderData()
     const { id } = useParams();
     const idInt = parseInt(id);
     const property = properties.find(property => property.id === idInt);
     const [days, setDays] = useState(1)
+
+    const notifyAddWishlist = () => toast.success("Book added in wishlist successfully");
+    const notifyWarningWishlist = () => toast.error("Already added in the wishlist!");
+
+    const getWishList = () => {
+        const WishList = localStorage.getItem(`${user.email}-wishlist`);
+        if (WishList) {
+            return JSON.parse(WishList);
+        }
+        return [];
+    }
+
+    const savedWishList = id => {
+        const WishList = getWishList();
+        const exists = WishList.find(cardId => cardId === id);
+
+        if (!exists) {
+            notifyAddWishlist();
+            WishList.push(id);
+            localStorage.setItem(`${user.email}-wishlist`, JSON.stringify(WishList));
+        }
+        else {
+            notifyWarningWishlist();
+        }
+    }
 
 
     const { estate_title, image, location, category, segment_name, description, price, status, area, coordinates, facilities, rating, reviews } = property
@@ -138,7 +166,7 @@ const PropertyDetails = () => {
                                     <button className="p-2 bg-blue-500 hover:bg-blue-400 text-white font-extrabold w-1/2 m-auto rounded-md">Buy</button>
                             }
 
-                            <button className="p-2 border-2 border-blue-400 text-black hover:bg-blue-400 hover:text-white font-extrabold w-1/2 m-auto rounded-md">Wishlist</button>
+                            <button onClick={() => savedWishList(property.id)} className="p-2 border-2 border-blue-400 text-black hover:bg-blue-400 hover:text-white font-extrabold w-1/2 m-auto rounded-md">Wishlist</button>
                         </div>
                     </div>
                 </div>
