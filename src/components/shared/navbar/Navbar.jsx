@@ -25,23 +25,23 @@ const Navbar = () => {
 
     const links = <>
         <ul className={`md:flex duration-300 top-12 absolute md:static ${open ? 'left-0' : '-left-60'} bg-blue-500 md:bg-inherit p-10 md:p-0 shadow-lg md:shadow-none no-underline gap-6 md:text-xs lg:text-base text-white z-10`}>
-            <li className="pb-2 md:pb-0"><NavLink to='/'>Home</NavLink></li>
-            <li className="pb-2 md:pb-0"><NavLink to='/about'>About</NavLink></li>
+            <li className="pb-2 md:pb-0"><NavLink className={'focus:border-b-2 focus:border-b-white'} to='/'>Home</NavLink></li>
+            <li className="pb-2 md:pb-0 focus:bg-red"><NavLink className={'focus:border-b-2 focus:border-b-white'} to='/about'>About</NavLink></li>
             {
                 user ?
-                    <li className="pb-2 md:pb-0"><NavLink to='/blogs'>Blogs</NavLink></li>
+                    <li className="pb-2 md:pb-0"><NavLink className={'focus:border-b-2 focus:border-b-white'} to='/blogs'>Blogs</NavLink></li>
                     :
                     ""
             }
             {
                 user ?
-                    <li className="pb-2 md:pb-0"><NavLink to='/bookmarks'>Bookmarks</NavLink></li>
+                    <li className="pb-2 md:pb-0"><NavLink className={'focus:border-b-2 focus:border-b-white'} to='/bookmarks'>Bookmarks</NavLink></li>
                     :
                     ""
             }
             {
                 user ?
-                    <li className="pb-2 md:pb-0"><NavLink to='/profile'>Profile</NavLink></li>
+                    <li className="pb-2 md:pb-0"><NavLink className={' focus:border-b-2 focus:border-b-white'} to='/profile'>Profile</NavLink></li>
                     :
                     ""
             }

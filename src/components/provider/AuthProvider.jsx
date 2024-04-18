@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
     const GoogleProvider = new GoogleAuthProvider();
     const GitHubProvider = new GithubAuthProvider()
 
+
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -28,24 +29,12 @@ const AuthProvider = ({ children }) => {
     }
 
     const handleGoogleSignIn = () => {
-        setLoading(true)
-        signInWithPopup(auth, GoogleProvider)
-            .then(result => {
-                setUser(result.user)
-                setLoading(false)
-            })
-            .catch(error => console.log(error))
+        return signInWithPopup(auth, GoogleProvider)
+
     }
 
     const handleGitHubSignIn = () => {
-        setLoading(true)
-        signInWithPopup(auth, GitHubProvider)
-            .then(result => {
-                setUser(result.user)
-                setLoading(false)
-            })
-            .catch(error => console.log(error))
-
+        return signInWithPopup(auth, GitHubProvider)
     }
 
     useEffect(() => {

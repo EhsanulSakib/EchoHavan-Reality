@@ -9,8 +9,9 @@ const Bookmarks = () => {
     const WishList = JSON.parse(localStorage.getItem(`${user.email}-wishlist`));
 
     const savedItems = properties?.filter(item => {
-        return WishList.includes(item.id);
+        return WishList?.includes(item.id);
     });
+
     return (
         <div>
             <Helmet>

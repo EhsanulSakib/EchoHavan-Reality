@@ -35,18 +35,22 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         handleGoogleSignIn()
-        navigate(location?.state ? location.state : '/')
-        notify()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+                notify()
+            })
     }
 
     const handleGithubLogin = () => {
         handleGitHubSignIn()
-        navigate(location?.state ? location.state : '/')
-        notify()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+                notify()
+            })
     }
 
     return (
-        <div className=" bg-slate-100 h-screen flex items-center justify-center">
+        <div className="mt-4 md:mt-8 lg:mt-12 bg-slate-100 flex items-center justify-center">
             <Helmet>
                 <title>EchoHaven Realty | Login</title>
             </Helmet>
